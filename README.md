@@ -48,6 +48,7 @@ Functional Requirements [5 marks]
 
 [2 marks] If the student doesn’t provide an 8-digit student number or doesn’t enter the first and last 
 name, show a Toast message asking to provide the correct information.
+
 [3 marks] Once the user clicks on the submit button, the program will write the information/record 
 (i.e.,  Student  ID,  Last  Name,  First  Name,  Gender,  Division)  into  a  file  (i.e.,  data.txt),  separated  with  
 commas (e.g., 12345678,hasan,khalad,Male,COSC). Additionally, each new record should be written in 
@@ -74,8 +75,10 @@ Functional Requirements [7 marks]
 [2]  Initially,  the  program  will  show  the  first  record  (e.g.,  Student  Number:  12345678,  Name:  khalad  
 hasan, Gender: Male, Division: COSC) from the file. Note that if there is no record in the file, a Toast or 
 some other message should be used to inform the user that they need to add some records. 
+
 [4] If the user presses the next or the previous button, it will show the next or previous record (if it’s 
 the last record, pressing the next button would show the first record. Similarly, if it’s the first record, 
 pressing the previous button would show the last record).  
+
 [1] Additionally, clicking the Main Screen button would return to the main screen. This should be done 
 by using a finish() method, not starting a new activity. 
