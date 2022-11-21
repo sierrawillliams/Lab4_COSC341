@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">File Operations</string>
+    <string name="read_data">Read Data</string>
+    <string name="write_data">Write Data</string>
+    <string name="student_number">Student Number</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="division">Division</string>
+    <string name="submit">Submit</string>
+    <string name="main_screen">Main Screen</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="name">Name</string>
+    <string name="student_id">Student ID</string>
+</resources>

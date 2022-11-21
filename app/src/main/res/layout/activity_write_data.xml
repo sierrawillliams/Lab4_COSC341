@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WriteData">
+    <TextView
+        android:id="@+id/studentNum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="50sp"
+        android:text="@string/student_number"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/studentNumberField"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160sp"
+        android:layout_marginTop="40sp"
+        android:hint="@string/student_number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/last_name"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/lastNameField"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160sp"
+        android:layout_marginTop="90sp"
+        android:hint="@string/last_name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="150sp"
+        android:text="@string/first_name"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/firstNameField"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160sp"
+        android:layout_marginTop="140sp"
+        android:hint="@string/first_name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="200sp"
+        android:text="@string/gender"
+        android:textSize="20sp" />
+    <RadioGroup
+        android:id="@+id/genderField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160sp"
+            android:layout_marginTop="200sp"
+            android:text="@string/male"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270sp"
+            android:layout_marginTop="-50sp"
+            android:text="@string/female"
+            android:textSize="20sp" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/division"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="250sp"
+        android:text="@string/division"
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/divisionField"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:layout_marginStart="160sp"
+        android:layout_marginTop="250sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="600sp"
+        android:text="@string/submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

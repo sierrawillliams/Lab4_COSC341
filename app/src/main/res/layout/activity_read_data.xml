@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReadData">
+    <TextView
+        android:id="@+id/studentId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="30sp"
+        android:text="@string/student_id"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/studentId_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="120sp"
+        android:layout_marginTop="30sp"
+        android:text="@string/student_id"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="70sp"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/name_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="120sp"
+        android:layout_marginTop="70sp"
+        android:text="@string/name"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/division_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32sp"
+        android:layout_marginTop="110sp"
+        android:text="@string/division"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/division_read2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="120sp"
+        android:layout_marginTop="110sp"
+        android:text="@string/division"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/gender_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="38sp"
+        android:layout_marginTop="150sp"
+        android:text="@string/gender"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/gender_read2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="120sp"
+        android:layout_marginTop="150sp"
+        android:text="@string/gender"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/previous"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="450sp"
+        android:text="@string/previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="205sp"
+        android:layout_marginTop="450sp"
+        android:text="@string/next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/mainScreen"
+        android:layout_width="365sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="520sp"
+        android:text="@string/main_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
