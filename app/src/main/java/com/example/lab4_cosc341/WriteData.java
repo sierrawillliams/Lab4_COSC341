@@ -3,6 +3,7 @@ package com.example.lab4_cosc341;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,7 +23,7 @@ public class WriteData extends AppCompatActivity {
 
     EditText studentNum, lastN, firstN;
     RadioGroup gender;
-    RadioButton male, female, selectedGender;
+    RadioButton male, female, other, selectedGender;
     Spinner division;
     Button submit;
     String studentNumber, lastName, firstName, div, gender_choice;
@@ -39,23 +40,18 @@ public class WriteData extends AppCompatActivity {
         gender = findViewById(R.id.genderField);
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
+        other = findViewById(R.id.other);
         division = findViewById(R.id.divisionField);
         submit = findViewById(R.id.submit);
 
         String[] spinner = new String[]{"COSC", "DATA", "MATH"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         division.setAdapter(adapter);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (studentNumber.length() != 8) {
-                    Toast.makeText(WriteData.this, "Input an 8 digit number", Toast.LENGTH_SHORT).show();
-                } else if (lastName.isEmpty()) {
-                    Toast.makeText(WriteData.this, "Input last name", Toast.LENGTH_SHORT).show();
-                } else if (firstName.isEmpty()) {
-                    Toast.makeText(WriteData.this, "Input first name", Toast.LENGTH_SHORT).show();
-                }
                 studentNumber = studentNum.getText().toString();
                 lastName = lastN.getText().toString();
                 firstName = firstN.getText().toString();
@@ -63,26 +59,38 @@ public class WriteData extends AppCompatActivity {
                 selectedGender = findViewById(selectedId);
                 gender_choice = selectedGender.getText().toString();
                 div = division.getSelectedItem().toString();
-                String filename = "data.txt";
-                File file = new File(filename);
-                if(!file.exists()) {
+                Intent intent = getIntent();
+                if (studentNumber.length() != 8) {
+                    Toast.makeText(WriteData.this, "Input an 8 digit number!", Toast.LENGTH_SHORT).show();
+                } else if (lastName.isEmpty()) {
+                    Toast.makeText(WriteData.this, "Input last name!", Toast.LENGTH_SHORT).show();
+                } else if (firstName.isEmpty()) {
+                    Toast.makeText(WriteData.this, "Input first name!", Toast.LENGTH_SHORT).show();
+                } else if (!male.isChecked() && !female.isChecked() && !other.isChecked()) {
+                    Toast.makeText(WriteData.this, "Choose a gender!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(WriteData.this, "All fields accepted!", Toast.LENGTH_SHORT).show();
+                    String filename = "data.txt";
+                    File file = new File(filename);
+                    if (!file.exists()) {
+                        try {
+                            file.createNewFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    String content = studentNumber + ", " + lastName + ", " + firstName + ", " + gender_choice + ", " + div + "\n";
+                    FileOutputStream outputStream;
                     try {
-                        file.createNewFile();
-                    } catch (IOException e) {
+                        outputStream = openFileOutput(filename, Context.MODE_APPEND);
+                        outputStream.write(content.getBytes());
+                        outputStream.close();
+                        Toast.makeText(WriteData.this, "Contents wrote to data.txt", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    finish();
                 }
-                String content = studentNumber + ", " + lastName + ", " + firstName + ", " + gender_choice + ", " + div + "\n";
-                FileOutputStream outputStream;
-                try {
-                    outputStream = openFileOutput(filename, Context.MODE_APPEND);
-                    outputStream.write(content.getBytes());
-                    outputStream.close();
-                    Toast.makeText(WriteData.this, "Contents wrote to data.txt", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                finish();
             }
         });
     }
